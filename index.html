@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+
+    <body>
+        <h1 id="title">Visual Creole Dictionary</h1>
+
+        <p>
+            <!--English -> Creole Search-->
+            <form action="/map.html" method = "POST">
+                <p>English/French -> Creole <input type = "text" name = "English" />
+                    <input type = "submit" value = "Submit" /></p>
+            </form>
+    
+            <!--Creole -> English Search-->
+            <form action="/map.html" method = "POST">
+                <p>Creole -> English/French 
+                    <input type = "text" name = "Creole" />
+                    <input type = "submit" name="Creole" value = "Submit" />
+                </p>
+            </form>
+    
+            <!--Link to Static Visualizations-->
+            <form action ="/images.html">
+                <p><input type="Submit" value="Link to Other Language Analysis Visualizations"></p>
+            </form>
+
+        </p>
+
+        <script src="js/script.js"></script>
+    </body>
+
+</html>
