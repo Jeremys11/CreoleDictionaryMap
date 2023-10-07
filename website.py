@@ -3,6 +3,7 @@ from read_data import *
 
 app = Flask(__name__)
 
+"""
 #User word/phrase input
 @app.route('/', methods=['GET'])
 def input():
@@ -32,3 +33,7 @@ def root():
 
 
     return render_template("index.html",markers=markers)
+"""
+@app.route('/index', methods = ['POST', 'GET'])
+def root():
+    return render_template("images.html")
