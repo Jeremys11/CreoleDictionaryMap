@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}"/>
+        <script>src="js/universal.js"</script>
+    </head>
+
+    <body>
+
+        <h1>Visual Creole Dictionary</h1>
+
+
+        <!--English -> Creole Search-->
+        <form action="/index" method = "POST">
+            <p>English/French -> Creole <input type = "text" name = "English" />
+                <input type = "submit" value = "Submit" /></p>
+        </form>
+
+        <!--Creole -> English Search-->
+        <form action="/index" method = "POST">
+            <p>Creole -> English/French 
+                <input type = "text" name = "Creole" />
+                <input type = "submit" name="Creole" value = "Submit" />
+            </p>
+        </form>
+
+        <!--Link to Static Visualizations-->
+        <form action ="/images">
+            <p><input type="Submit" value="Link to Other Language Analysis Visualizations"></p>
+        </form>
+
+    </body>
+</html>
