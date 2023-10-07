@@ -3,7 +3,7 @@ from read_data import *
 
 app = Flask(__name__)
 
-"""
+
 #User word/phrase input
 @app.route('/', methods=['GET'])
 def input():
