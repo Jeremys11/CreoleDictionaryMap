@@ -33,7 +33,3 @@ def root():
 
 
     return render_template("index.html",markers=markers)
-"""
-@app.route('/index', methods = ['POST', 'GET'])
-def root():
-    return render_template("images.html")
