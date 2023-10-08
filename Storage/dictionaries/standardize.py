@@ -36,7 +36,7 @@ for key in ACROLECT_LIST.keys():
                 row[2] = "Haitian Creole"
             elif(row[2] == "Martinique"):
                 row[2] = "Martinique Antillean Creole"
-            elif(row[2]) == "Jamaican":
+            elif(row[2]) == "Jamaican Creole":
                 row[2] = "Jamaican Creole"
             elif(row[2] == "Louisiana Creole"):
                 row[2] = "Louisiana Creole"
@@ -54,7 +54,7 @@ for key in ACROLECT_LIST.keys():
         writer = csv.writer(f)
         writer.writerows(rows[1:])
 
-with open("Storage/dictionaries/BigThing.csv",'r',newline='') as csvfile, open('Storage/dictionaries/combined.csv','w') as combo:
+with open("Storage/dictionaries/BigThing.csv",'r',newline='') as csvfile, open('Storage/dictionaries/combined.csv','w',newline='') as combo:
         reader = csv.reader(csvfile, delimiter=",")
         writer = csv.writer(combo,delimiter=",")
         for row in reader:
