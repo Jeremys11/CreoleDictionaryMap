@@ -1,15 +1,31 @@
-var message = "hi"; //javascript untyped
+const fs = require("fs");
+const { parse } = require("csv-parse");
+const data = [];
+const match = [];
 
-function a () {
-    //empty
-}
-
-var b = function () {/*empty*/} //This assigns var to function, not result
-
-function compare(x,y){
-    return x > y;
-}
-
-var c = compare(4,2);
-
-compare(4,5);
+fs.createReadStream("Creole_Languages.csv")
+  .pipe(
+    parse({
+      delimiter: ",",
+      columns: true,
+      ltrim: true,
+    })
+  )
+  .on("data", function (row) {
+    // This will push the object row into the array
+    data.push(row);
+  })
+  .on("error", function (error) {
+    console.log(error.message);
+  })
+  .on("end", function () {
+    // Here log the result array
+    //console.log("parsed csv data:");
+    for (let i = 0; i < data.length; i++) {
+        var parsed = JSON.parse(JSON.stringify(data[i]));
+        if(parsed["word"] == "walk"){
+            match.push(data[i]);
+        }
+    } 
+    console.log(match)
+  });
