@@ -8,22 +8,19 @@ body {
     font-size: 30px;
   }
   h2{
-    color: rgb(20, 20, 196);
-    background-color: rgb(132, 209, 219);
+    color: green;
     text-align: center;
-    font-size: 16px;
+    font-size: 30-px;
   }
   h3{
-    color: rgb(20, 20, 196);
-    background-color: rgb(132, 209, 219);
+    color: red;
     text-align: center;
-    font-size: 16px;
+    font-size: 30px;
   }
   h4{
-    color: rgb(20, 20, 196);
-    background-color: rgb(132, 209, 219);
+    color: rgb(64, 112, 180);
     text-align: center;
-    font-size: 16px;
+    font-size: 30px;
   }
   p {
     color: black;
