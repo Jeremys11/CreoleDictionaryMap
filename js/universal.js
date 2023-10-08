@@ -18,3 +18,9 @@ map.setZoom(3);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+//Adding features to each point to show up on rollover
+function onEachFeature(feature, layer) {
+      layer.bindTooltip('<h1><p>Creole Language: '+feature.properties.creole_language+'</p>'+'<p>Creole Word: '+feature.properties.creole_word+'</p>'
+      +'<p>English/French Word: '+feature.properties.word+'</p>'+'<p>Acrolect: '+feature.properties.acrolect+'</p></h1>');
+}

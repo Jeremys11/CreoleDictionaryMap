@@ -23,6 +23,10 @@
   <script src="js/universal.js" /></script>
   <script type="text/javascript">
 
+fetch('Creole_Languages.json')
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+
   // PYTHON VARIABLE COMES IN HERE -- FUNCTION TO TRICK CODE DEFINED IN UNIVERSAL.JS
   geojsonFeature = myFunc({{markers|tojson}});
 
