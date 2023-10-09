@@ -36,7 +36,7 @@
   const queryValue = englishValue || creoleValue;
 
   console.log(queryValue);
-  fetch('Creole_Languages.json')
+  fetch('/json/Creole_Languages.json')
     .then((response) => response.json())
     .then((data) => {
       // Check if the data is an array
