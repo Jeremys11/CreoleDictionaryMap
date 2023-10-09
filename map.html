@@ -45,10 +45,20 @@
         data = [data];
       }
 
-      // Filter the data based on the query value
-      const filteredData = data.filter((item) => {
-        return item.word.includes(queryValue);
-      });
+      var filteredData;
+      if (creoleValue === null) {
+        // Filter the data based on the query value
+        filteredData = data.filter((item) => {
+          return item.word.toLowerCase() == (queryValue.toLowerCase());
+        });
+      } else {
+        // Filter the data based on the query value
+        filteredData = data.filter((item) => {
+          return item.creole_word.toLowerCase() == (queryValue.toLowerCase());
+        });
+      }
+
+      console.log(filteredData);
 
       // Create a GeoJSON object from the filtered data
       const geojsonFeature = {
@@ -58,7 +68,7 @@
             "type": "Feature",
             "geometry": {
               "type": "Point",
-              "coordinates": item.latlon
+              "coordinates": JSON.parse(item.latlon).map(Number)
             },
             "properties": {
               "creole_word": item.creole_word,
