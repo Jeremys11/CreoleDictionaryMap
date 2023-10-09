@@ -12,18 +12,41 @@
 
         <p>
             <!--English -> Creole Search-->
-            <form action="/map.html" method = "POST">
-                <p>English/French -> Creole <input type = "text" name = "English" />
-                    <input type = "submit" value = "Submit" /></p>
+            <form id="english-form" action="/map.html" method = "POST">
+                <p>
+                    <label for="english-input">English/French -> Creole</label> 
+                    <input type = "text" id="english-input" name = "English" />
+                    <button type="submit">Submit</button>
+                </p>
             </form>
     
             <!--Creole -> English Search-->
-            <form action="/map.html" method = "POST">
-                <p>Creole -> English/French 
-                    <input type = "text" name = "Creole" />
-                    <input type = "submit" name="Creole" value = "Submit" />
+            <form id="creole-form" action="/map.html" method = "POST">
+                <p>
+                    <label for="creole-input">Creole ->English/French</label> 
+                    <input type = "text" id="creole-input" name = "Creole" />
+                    <button type="submit">Submit</button>
                 </p>
             </form>
+
+            <script>
+                const englishForm = document.querySelector('#english-form');
+                englishForm.addEventListener('submit', (event) => {
+                  event.preventDefault();
+                  const query = document.querySelector('#english-input').value;
+                  const url = `map.html?English=${encodeURIComponent(query)}`;
+                  window.location.href = url;
+                });
+            
+                const creoleForm = document.querySelector('#creole-form');
+                creoleForm.addEventListener('submit', (event) => {
+                  event.preventDefault();
+                  const query = document.querySelector('#creole-input').value;
+                  const url = `map.html?Creole=${encodeURIComponent(query)}`;
+                  window.location.href = url;
+                });
+              </script>
+
     
             <!--Link to Static Visualizations-->
             <form action ="/images.html">

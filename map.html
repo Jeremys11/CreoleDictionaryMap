@@ -23,21 +23,56 @@
   <script src="js/universal.js" /></script>
   <script type="text/javascript">
 
-fetch('Creole_Languages.json')
+  // Parse the query string from the URL
+  const searchParams = new URLSearchParams(window.location.search);
+
+  // Retrieve the value of the "English" input field from the first form
+  const englishValue = searchParams.get("English");
+
+  // Retrieve the value of the "Creole" input field from the second form
+  const creoleValue = searchParams.get("Creole");
+
+  // Use the value to query the JSON file
+  const queryValue = englishValue || creoleValue;
+
+  console.log(queryValue);
+  fetch('Creole_Languages.json')
     .then((response) => response.json())
-    .then((json) => console.log(json));
+    .then((data) => {
+      // Check if the data is an array
+      if (!Array.isArray(data)) {
+        // Wrap the data in an array
+        data = [data];
+      }
 
-  // PYTHON VARIABLE COMES IN HERE -- FUNCTION TO TRICK CODE DEFINED IN UNIVERSAL.JS
-  geojsonFeature = myFunc({{markers|tojson}});
+      // Filter the data based on the query value
+      const filteredData = data.filter((item) => {
+        return item.word.includes(queryValue);
+      });
 
-  //Adding layer to add different points
-  var myLayer = L.geoJSON().addTo(map);
+      // Create a GeoJSON object from the filtered data
+      const geojsonFeature = {
+        "type": "FeatureCollection",
+        "features": filteredData.map((item) => {
+          return {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": item.latlon
+            },
+            "properties": {
+              "creole_word": item.creole_word,
+              "word": item.word,
+              "creole_language": item.creole_name,
+              "acrolect": item.acrolect
+            }
+          };
+        })
+      };
 
-
-  //Going through the json and adding points to map
-  var layerGroup = L.geoJSON(geojsonFeature, {
-      onEachFeature:onEachFeature
-    }).addTo(map);
+      // Add the GeoJSON object to the map
+      L.geoJSON(geojsonFeature,{onEachFeature}).addTo(map);
+    });
 
   </script>
 </body>
