@@ -7,7 +7,7 @@ Changes from previous version:
 
   Flask is no longer used as the web application framework. Web app has transitioned to Javascript with Python only being used for data scraping and cleaning.
   
-  Previous web app was hosted on Pythonanywhere. Web app has been migrated to an Azure Static Web App which can be found here [Link to Azure Site](https://websiteepeyxeag574ao.azurewebsites.net/)
+  Previous web app was hosted on Pythonanywhere. Web app has been migrated to an Azure Static Web App which can be found here [Link to Github Pages](https://jeremys11.github.io/CreoleDictionaryMap/)
   
   Data was previously read directly from excel files. Now, all dictionaries have been combined into a single .json file.
   
