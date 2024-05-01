@@ -8,26 +8,28 @@
     </head>
 
     <body>
+        <!--English -> Creole Search-->
         <h1 id="title">Visual Creole Language Dictionary</h1>
-
-        <p>
-            <!--English -> Creole Search-->
-            <form id="english-form" action="/map.html" method = "POST">
-                <p>
-                    <label for="english-input">English/French -> Creole</label> 
-                    <input type = "text" id="english-input" name = "English" />
-                    <button type="submit">Submit</button>
-                </p>
-            </form>
+            <div class="text-box">
+                <form id="english-form" action="/map.html" method = "POST">
+                    <p>
+                        <label for="english-input">English/French -> Creole</label> 
+                        <input type = "text" id="english-input" name = "English" />
+                        <button class="input-button" role="button" type="submit">Submit</button>
+                    </p>
+                </form>
+            </div>
     
             <!--Creole -> English Search-->
-            <form id="creole-form" action="/map.html" method = "POST">
-                <p>
-                    <label for="creole-input">Creole ->English/French</label> 
-                    <input type = "text" id="creole-input" name = "Creole" />
-                    <button type="submit">Submit</button>
-                </p>
-            </form>
+            <div class="text-box">
+                <form id="creole-form" action="/map.html" method = "POST">
+                    <p>
+                        <label for="creole-input">Creole ->English/French</label> 
+                        <input type = "text" id="creole-input" name = "Creole" />
+                        <button class="input-button" role="button type="submit">Submit</button>
+                    </p>
+                </form>
+            </div>
 
             <script>
                 const englishForm = document.querySelector('#english-form');
@@ -47,10 +49,11 @@
                 });
               </script>
 
+
     
             <!--Link to Static Visualizations-->
             <div style="text-align:center;">
-                <button id="images_button">Link to Other Language Analysis Visualizations</button>
+                <button class="button-36" role="button" id="images_button">Link to Other Language Analysis Visualizations</button>
             </div>
             
             <script type="text/javascript">
@@ -59,23 +62,36 @@
                 };
             </script>
             
+            <!--Help Section-->
+            <div class="help-box">
+                <p id="Help_Section_Box1">The first box allows you to input any English/French word or phrase and outputs the equivalent word or phrase in a few select Creole languages overlayed on a map of the world</p>
+            </div>
 
+            <div class="help-box">
+                <p id="Help_Section_Box2">The second box allows you to input any Creole word or phrase and outputs the equivalent English/French word or phrase overlayed on a map of the world</p>
+            </div>
 
-
-            <h2 id="Help_Section_Box1">The first box allows you to input any English/French word or phrase and outputs the equivalent word or phrase in a few select Creole languages overlayed on a map of the world</h2>
-            <h3 id="Help_Section_Box2">The second box allows you to input any Creole word or phrase and outputs the equivalent English/French word or phrase overlayed on a map of the world</h3>
-            <h4 id="Help_Section_Box3">The third box takes you to a collection of visualizations made with the language data that was collected for this site</h4>
-        </p>
+            <div class="help-box">
+                <p id="Help_Section_Box3">The third box takes you to a collection of visualizations made with the language data that was collected for this site</p>
+            </div>
+            
         
-        <div id="flags">
-           
-            <img src="static/flags/St_lucia_flag_300.png"style="width:26%";/>
-            <img src="static/flags/Flag_of_Suriname.svg"style="width:20%";/>
-            <img src="static/flags/Flag of Jamaica.svg"style="width:27%;"/>
-            <img src="static/flags/Flag_of_Haiti.svg"style="width:22.5%";/>
+        <!--Flags of Creole Speaking Countries-->
+        <div class="row">
+            <div class="column">
+                <img src="static/flags/St_lucia_flag_300.png"/>
+            </div>
+            <div class="column">
+                <img src="static/flags/Flag_of_Suriname.svg"/>
+            </div>
+            <div class="column">
+                <img src="static/flags/Flag_of_Haiti.svg"/>
+            </div>
+            <div class="column">
+                <img src="static/flags/Flag of Jamaica.svg"/>
+            </div> 
         </div>  
 
-        <!--<script src="js/script.js"></script>-->
     </body>
 
 </html>
