@@ -1,97 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <title>Homepage</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="css/style.css"/>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Creole Language Dictionary</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
 
-    <body>
-        <!--English -> Creole Search-->
+<body>
+    <!-- Header Section -->
+    <header>
         <h1 id="title">Visual Creole Language Dictionary</h1>
-            <div class="text-box">
-                <form id="english-form" action="/map.html" method = "POST">
-                    <p>
-                        <label for="english-input">English/French -> Creole</label> 
-                        <input type = "text" id="english-input" name = "English" />
-                        <button class="input-button" role="button" type="submit">Submit</button>
-                    </p>
-                </form>
-            </div>
-    
-            <!--Creole -> English Search-->
-            <div class="text-box">
-                <form id="creole-form" action="/map.html" method = "POST">
-                    <p>
-                        <label for="creole-input">Creole ->English/French</label> 
-                        <input type = "text" id="creole-input" name = "Creole" />
-                        <button class="input-button" role="button type="submit">Submit</button>
-                    </p>
-                </form>
-            </div>
+    </header>
 
-            <script>
-                const englishForm = document.querySelector('#english-form');
-                englishForm.addEventListener('submit', (event) => {
-                  event.preventDefault();
-                  const query = document.querySelector('#english-input').value;
-                  const url = `map.html?English=${encodeURIComponent(query)}`;
-                  window.location.href = url;
-                });
-            
-                const creoleForm = document.querySelector('#creole-form');
-                creoleForm.addEventListener('submit', (event) => {
-                  event.preventDefault();
-                  const query = document.querySelector('#creole-input').value;
-                  const url = `map.html?Creole=${encodeURIComponent(query)}`;
-                  window.location.href = url;
-                });
-              </script>
+    <!-- English -> Creole Search -->
+    <section class="search-section">
+        <div class="text-box">
+            <form id="english-form" action="/map.html" method="POST">
+                <label for="english-input">English/French -> Creole</label>
+                <input type="text" id="english-input" name="English" placeholder="Enter English/French word" />
+                <button class="input-button" type="submit">Submit</button>
+            </form>
+        </div>
 
+        <!-- Creole -> English Search -->
+        <div class="text-box">
+            <form id="creole-form" action="/map.html" method="POST">
+                <label for="creole-input">Creole -> English/French</label>
+                <input type="text" id="creole-input" name="Creole" placeholder="Enter Creole word" />
+                <button class="input-button" type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
 
-    
-            <!--Link to Static Visualizations-->
-            <div style="text-align:center;">
-                <button class="button-36" role="button" id="images_button">Link to Other Language Analysis Visualizations</button>
-            </div>
-            
-            <script type="text/javascript">
-                document.getElementById("images_button").onclick = function () {
-                    location.href = "https://jeremys11.github.io/CreoleDictionaryMap/images.html";
-                };
-            </script>
-            
-            <!--Help Section-->
-            <div class="help-box">
-                <p id="Help_Section_Box1">The first box allows you to input any English/French word or phrase and outputs the equivalent word or phrase in a few select Creole languages overlayed on a map of the world</p>
-            </div>
+    <!-- Link to Static Visualizations -->
+    <div class="center-align">
+        <button class="button-36" role="button" id="images_button">Link to Other Language Analysis Visualizations</button>
+    </div>
 
-            <div class="help-box">
-                <p id="Help_Section_Box2">The second box allows you to input any Creole word or phrase and outputs the equivalent English/French word or phrase overlayed on a map of the world</p>
-            </div>
+    <script type="text/javascript">
+        document.getElementById("images_button").onclick = function () {
+            location.href = "https://jeremys11.github.io/CreoleDictionaryMap/images.html";
+        };
 
-            <div class="help-box">
-                <p id="Help_Section_Box3">The third box takes you to a collection of visualizations made with the language data that was collected for this site</p>
-            </div>
-            
-        
-        <!--Flags of Creole Speaking Countries-->
-        <div class="row">
-            <div class="column">
-                <img src="static/flags/St_lucia_flag_300.png"/>
-            </div>
-            <div class="column">
-                <img src="static/flags/Flag_of_Suriname.svg"/>
-            </div>
-            <div class="column">
-                <img src="static/flags/Flag_of_Haiti.svg"/>
-            </div>
-            <div class="column">
-                <img src="static/flags/Flag of Jamaica.svg"/>
-            </div> 
-        </div>  
+        const englishForm = document.querySelector('#english-form');
+        englishForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const query = document.querySelector('#english-input').value;
+            const url = `map.html?English=${encodeURIComponent(query)}`;
+            window.location.href = url;
+        });
 
-    </body>
+        const creoleForm = document.querySelector('#creole-form');
+        creoleForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const query = document.querySelector('#creole-input').value;
+            const url = `map.html?Creole=${encodeURIComponent(query)}`;
+            window.location.href = url;
+        });
+    </script>
+
+    <!-- Help Section -->
+    <section class="help-section">
+        <div class="help-box">
+            <p>The first box allows you to input any English/French word or phrase and outputs the equivalent word or phrase in a few select Creole languages overlayed on a map of the world</p>
+        </div>
+        <div class="help-box">
+            <p>The second box allows you to input any Creole word or phrase and outputs the equivalent English/French word or phrase overlayed on a map of the world</p>
+        </div>
+        <div class="help-box">
+            <p>The third box takes you to a collection of visualizations made with the language data that was collected for this site</p>
+        </div>
+    </section>
+
+    <!-- Flags of Creole Speaking Countries -->
+    <section class="flag-gallery">
+        <div class="flag-row">
+            <img src="static/flags/St_lucia_flag_300.png" alt="St. Lucia Flag" class="flag"/>
+            <img src="static/flags/Flag_of_Suriname.svg" alt="Suriname Flag" class="flag"/>
+            <img src="static/flags/Flag_of_Haiti.svg" alt="Haiti Flag" class="flag"/>
+            <img src="static/flags/Flag_of_Jamaica.svg" alt="Jamaica Flag" class="flag"/>
+        </div>
+    </section>
+
+</body>
 
 </html>
